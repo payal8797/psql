@@ -1,0 +1,8 @@
+create or replace function myfib3(fib_for integer) returns integer as $$
+begin
+        if fib_for<2 then
+                return fib_for;
+        endif;  
+return myfib3(fib_for-2)+myfib3(fib_for-1);
+        end;
+$$ language plpgsql;
